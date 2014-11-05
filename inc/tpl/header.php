@@ -13,7 +13,7 @@
 		echo '<meta name="' . $name . '" content="' . $content . '" />' . "\n";
 	}
 ?>
-<meta name="copyright" content="Copyright (c) 2004-2006 Projekt CZilla, 2009-2010 Mozilla.cz" />
+<meta name="copyright" content="Copyright (c) 2004-2006 Projekt CZilla, 2009-<?php echo date('Y'); ?> Mozilla.cz" />
 <meta name="author" content="HTML code: Adam Hauner; http://hauner.cz/" />
 <meta name="robots" content="index,follow" />
 <script type="text/javascript">
