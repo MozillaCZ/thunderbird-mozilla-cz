@@ -12,6 +12,8 @@ a:active				{color:#E00}
 hr						{display:none}
 
 .page					{width:57em;margin:0 auto;text-align:left;background-color:#FFF;min-width:684px}
+.obsolete				{text-align:center;background-color:#FF0;width:100%;height:50px;font-size:1.1em}
+.obsolete .inner		{position:relative;top:50%;margin-top:-1em;text-shadow: 1px 1px #808080;}
 .cont					{margin:1em 0 0;padding:0;min-height:10em}
 .main					{width:70%;float:left}
 

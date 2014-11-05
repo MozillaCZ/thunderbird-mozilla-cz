@@ -31,6 +31,9 @@
 </head>
 <body id="thunderbird-mozilla-cz">
 <div class="page">
+<div class="obsolete">
+	<div class="inner">Tato stránka již není udržována, aktuální informace najdete na&nbsp;<a href="http://www.mozilla.cz/">Mozilla.cz</a>.</div>
+</div>
 <div class="head">
 	<div class="head-logo"><a href="/" title="Zpět na titulní stranu"><span><?php echo $this->getWebName()?></span></a></div>
 <?php
