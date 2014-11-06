@@ -13,7 +13,7 @@
 		echo '<meta name="' . $name . '" content="' . $content . '" />' . "\n";
 	}
 ?>
-<meta name="copyright" content="Copyright (c) 2004-2006 Projekt CZilla, 2009-2010 Mozilla.cz" />
+<meta name="copyright" content="Copyright (c) 2004-2006 Projekt CZilla, 2009-<?php echo date('Y'); ?> Mozilla.cz" />
 <meta name="author" content="HTML code: Adam Hauner; http://hauner.cz/" />
 <meta name="robots" content="index,follow" />
 <script type="text/javascript">
@@ -31,6 +31,9 @@
 </head>
 <body id="thunderbird-mozilla-cz">
 <div class="page">
+<div class="obsolete">
+	<div class="inner">Tato stránka již není udržována, aktuální informace najdete na&nbsp;<a href="http://www.mozilla.cz/">Mozilla.cz</a>.</div>
+</div>
 <div class="head">
 	<div class="head-logo"><a href="/" title="Zpět na titulní stranu"><span><?php echo $this->getWebName()?></span></a></div>
 <?php
