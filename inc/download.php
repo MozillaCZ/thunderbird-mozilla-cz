@@ -1,32 +1,55 @@
 <?php
 class Download
 {
-	private $mysqlConfig;
 	private $platform;
 	private $product;
+	private $products = array( //will be replaced by objects
+		'firefox' => array(
+			'name' => 'Mozilla Firefox',
+			'json_url' => 'https://www.mozilla.org/includes/product-details/json/firefox_versions.json',
+			'key' => 'LATEST_FIREFOX_VERSION',
+			'download_url' => 'https://download.mozilla.org/?product=firefox-%1$s&os=%2$s&lang=cs',
+			'changelog_url' => 'https://www.mozilla.org/cs/firefox/%s/releasenotes/'
+		),
+		'thunderbird' => array(
+			'name' => 'Mozilla Thunderbird',
+			'json_url' => 'https://www.mozilla.org/includes/product-details/json/thunderbird_versions.json',
+			'key' => 'LATEST_THUNDERBIRD_VERSION',
+			'download_url' => 'https://download.mozilla.org/?product=thunderbird-%1$s&os=%2$s&lang=cs',
+			'changelog_url' => 'https://www.mozilla.org/cs/thunderbird/%s/releasenotes/'
+		)
+	);
 	private $data = array();
 
-	public function __construct($mysqlConfig, $product)
+	public function __construct($product)
 	{
-		$this->mysqlConfig = $mysqlConfig;
 		$this->product = $product;
 		$this->loadData();
 	}
 
 	private function loadData()
 	{
-		$link = mysql_connect($this->mysqlConfig['host'], $this->mysqlConfig['user'], $this->mysqlConfig['pass']);
-		if (!$link) {
-			return false;
-		}
-		$db = mysql_select_db($this->mysqlConfig['db'], $link);
-		if ($db) {
-			$query = mysql_query("SELECT * FROM mozsk_produkty WHERE urlid='" . $this->product . "' ORDER BY datum DESC LIMIT 1");
-			if ($query) {
-				$this->data = mysql_fetch_assoc($query);
+		$in_cache = CACHE_DIR.basename($this->products[$this->product]['json_url']);
+		if(is_file($in_cache) && time()-filemtime($in_cache)<CACHE_EXPIRE) {
+			$json = file_get_contents($in_cache);
+		} else {
+			$json = file_get_contents($this->products[$this->product]['json_url']);
+			if(!in_array('HTTP/1.1 200 OK', $http_response_header)) {
+				if(is_file($in_cache)) {
+					$json = file_get_contents($in_cache);
+				} else {
+					$json = null;
+				}
+			} else {
+				file_put_contents($in_cache, $json);
 			}
 		}
-		mysql_close($link);
+		$this->data['nazov'] = $this->products[$this->product]['name'];
+		$this->data['verzia'] = json_decode($json, true)[$this->products[$this->product]['key']];
+		$this->data['download_win'] = sprintf($this->products[$this->product]['download_url'], $this->data['verzia'], 'win');
+		$this->data['download_lin'] = sprintf($this->products[$this->product]['download_url'], $this->data['verzia'], 'linux');
+		$this->data['download_mac'] = sprintf($this->products[$this->product]['download_url'], $this->data['verzia'], 'osx');
+		$this->data['changelog'] = sprintf($this->products[$this->product]['changelog_url'], $this->data['verzia']);
 	}
 
 	public function getPlatform()

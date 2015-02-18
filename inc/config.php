@@ -1,5 +1,4 @@
 <?php
-  $mysql_host = "127.0.0.1";
-  $mysql_db   = "db";
-  $mysql_user = "user";
-  $mysql_pass = "pass";
+/* Cache settings */
+define('CACHE_DIR', dirname(__FILE__).'/../cache/');
+define('CACHE_EXPIRE', 7200);

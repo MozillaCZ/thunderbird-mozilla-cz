@@ -72,16 +72,9 @@ class Page
 
 	public function getDownload($product)
 	{
-		include $this->incPath . '/config.php';
-		$mysqlConfig = array(
-			'host' => $mysql_host,
-			'user' => $mysql_user,
-			'pass' => $mysql_pass,
-			'db' => $mysql_db
-		);
-
+		include_once $this->incPath . '/config.php';
 		require $this->incPath . '/download.php';
-		return new Download($mysqlConfig, $product);
+		return new Download($product);
 	}
 }
 
