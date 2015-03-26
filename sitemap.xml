@@ -12,11 +12,6 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://thunderbird.mozilla.cz/proc-pouzivat/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>http://thunderbird.mozilla.cz/otazky/</loc>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
@@ -27,39 +22,9 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://thunderbird.mozilla.cz/media/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/jak-zacit/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>http://thunderbird.mozilla.cz/propagace/</loc>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/stahnout/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/proc-pouzivat/enigmail/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/proc-pouzivat/kalendar/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/otazky/klavesove-zkratky/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://thunderbird.mozilla.cz/otazky/rozdily-terminologie/</loc>
