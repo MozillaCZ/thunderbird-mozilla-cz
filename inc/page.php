@@ -3,6 +3,13 @@ class Page
 {
 	private $webUrl = 'http://thunderbird.mozilla.cz/';
 	private $webName = 'Používejte Thunderbird';
+	private $redirects = array(
+		'/media/' => 'https://www.mozilla.org/cs/thunderbird/features/',
+		'/jak-zacit/' => 'https://support.mozilla.org/cs/kb/instalace-thunderbirdu',
+		'/stahnout/' => 'http://www.mozilla.cz/stahnout/thunderbird/',
+		'/proc-pouzivat/enigmail/' => 'https://support.mozilla.org/cs/kb/sifrovani-digitalni-podepisovani-zprav',
+		'/proc-pouzivat/kalendar/' => 'https://support.mozilla.org/cs/kb/pouziti-kalendare-lightning',
+	);
 
 	private $title = 'Mozilla Thunderbird';
 	private $description;
@@ -14,6 +21,16 @@ class Page
 	{
 		error_reporting(E_ALL);
 		$this->incPath = dirname(__FILE__);
+	}
+
+	public function redirect() {
+		$requestUrl = filter_input(INPUT_SERVER, 'REQUEST_URI');
+		if(isset($this->redirects[$requestUrl])) {
+			header('HTTP/1.1 301 Moved Permanently');
+			header(sprintf('Location: %s', $this->redirects[$requestUrl]));
+			header('Connection: close');
+			exit;
+		}
 	}
 
 	public function setTitle($title, $prepend = true) {
@@ -79,3 +96,4 @@ class Page
 }
 
 $page = new Page();
+$page->redirect();
