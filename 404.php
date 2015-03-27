@@ -1,19 +1,22 @@
 <?php
-	$badUrl = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-	$redirectUrl = '';
-	
-	if (strpos($_SERVER['REQUEST_URI'], "/otazky/klavesove-zkratky") === 0) {
-		$redirectUrl = "https://support.mozillamessaging.com/cs/kb/klavesove-zkratky";
-	}
-	
-	if (strpos($_SERVER['REQUEST_URI'], "/proc-pouzivat") === 0) {
-		$redirectUrl = "http://www.mozilla.org/cs/thunderbird/features/";
-	}	
+	$redirects = array(
+		'/jak-zacit' => 'https://support.mozilla.org/cs/kb/instalace-thunderbirdu',
+		'/media' => 'https://www.mozilla.org/cs/thunderbird/features/',
+		'/otazky/klavesove-zkratky' => 'https://support.mozilla.org/cs/kb/klavesove-zkratky',
+		'/proc-pouzivat' => 'https://www.mozilla.org/cs/thunderbird/features/',
+		'/proc-pouzivat/enigmail' => 'https://support.mozilla.org/cs/kb/sifrovani-digitalni-podepisovani-zprav',
+		'/proc-pouzivat/kalendar' => 'https://support.mozilla.org/cs/kb/pouziti-kalendare-lightning',
+		'/stahnout' => 'http://www.mozilla.cz/stahnout/thunderbird/',
+	);
 
-	if ($redirectUrl != "")
-	{
+	$requestUri = filter_input(INPUT_SERVER, 'REQUEST_URI');
+	$requestUri = str_replace('index.php', '', $requestUri);
+	if($requestUri !== '/') {
+		$requestUri = rtrim($requestUri, '/');
+	}
+	if(isset($redirects[$requestUri])) {
 		header('HTTP/1.1 301 Moved Permanently');
-		header('Location: ' . $redirectUrl);
+		header(sprintf('Location: %s', $redirects[$requestUri]));
 		header('Connection: close');
 		exit;
 	}
