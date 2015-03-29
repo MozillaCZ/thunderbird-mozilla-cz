@@ -6,7 +6,7 @@
 		'/proc-pouzivat' => 'https://www.mozilla.org/cs/thunderbird/features/',
 		'/proc-pouzivat/enigmail' => 'https://support.mozilla.org/cs/kb/sifrovani-digitalni-podepisovani-zprav',
 		'/proc-pouzivat/kalendar' => 'https://support.mozilla.org/cs/kb/pouziti-kalendare-lightning',
-		'/stahnout/tapety' => 'https://addons.mozilla.org/cs/firefox/themes/',
+		'/stahnout/tapety' => 'https://addons.mozilla.org/cs/thunderbird/themes/',
 		'/stahnout' => 'http://www.mozilla.cz/stahnout/thunderbird/',
 	);
 
