@@ -7,4 +7,4 @@ Instalace
 ----------
 
 - nakopírujte na server s podporou PHP
-- v případě potřeby zprovoznit odkazy ke stažení je potřeba nastavit přístup k databázi v *inc/config.php*.
+- v případě potřeby upravte nastavení kešování nejnovější verze/odkazů ke stažení v *inc/config.php*.
