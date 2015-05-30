@@ -53,7 +53,7 @@ class Download
 				if(!file_exists(CACHE_DIR)) {
 					mkdir(CACHE_DIR);
 				}
-				file_put_contents($in_cache, $json);
+				file_put_contents($in_cache, $json, LOCK_EX);
 			}
 		}
 		$this->data['nazov'] = $this->products[$this->product]['name'];
