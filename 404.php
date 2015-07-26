@@ -2,6 +2,7 @@
 	$redirects = array(
 		'/jak-zacit' => 'https://support.mozilla.org/cs/kb/instalace-thunderbirdu',
 		'/media' => 'https://www.mozilla.org/cs/thunderbird/features/',
+		'/otazky' => 'https://support.mozilla.org/cs/kb/podpora-komunity',
 		'/otazky/klavesove-zkratky' => 'https://support.mozilla.org/cs/kb/klavesove-zkratky',
 		'/proc-pouzivat' => 'https://www.mozilla.org/cs/thunderbird/features/',
 		'/proc-pouzivat/enigmail' => 'https://support.mozilla.org/cs/kb/sifrovani-digitalni-podepisovani-zprav',
