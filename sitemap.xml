@@ -10,11 +10,6 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://thunderbird.mozilla.cz/otazky/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>http://thunderbird.mozilla.cz/zkusenosti/</loc>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
