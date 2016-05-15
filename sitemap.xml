@@ -10,57 +10,7 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://thunderbird.mozilla.cz/zkusenosti/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>http://thunderbird.mozilla.cz/otazky/rozdily-terminologie/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/zkusenosti/dalsi/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/zkusenosti/martin-kopta/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/zkusenosti/jiri-padalik/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/zkusenosti/klara-rozkova/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/zkusenosti/jiri-zahradil/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/zkusenosti/zdenek-koch/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/zkusenosti/jakub-strnad/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/zkusenosti/jan-bina/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://thunderbird.mozilla.cz/zkusenosti/lukas-janousek/</loc>
   <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
