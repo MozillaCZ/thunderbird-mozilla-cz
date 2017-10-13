@@ -1,0 +1,41 @@
+###
+# force HTTPS
+###
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+###
+# HSTS
+###
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains; preload" "expr=%{HTTPS} == 'on'"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+#    RewriteRule jak-zacit/?$ https://support.mozilla.org/cs/kb/instalace-thunderbirdu [L,R=301]
+#
+#    RewriteRule media/?$ https://www.mozilla.org/cs/thunderbird/features/ [L,R=301]
+#
+#    RewriteRule otazky/?$ https://www.mozilla.cz/podpora/ [L,R=301]
+#    RewriteRule otazky/klavesove-zkratky/?$ https://support.mozilla.org/cs/kb/klavesove-zkratky [L,R=301]
+#
+#    RewriteRule proc-pouzivat/?$ https://www.mozilla.org/cs/thunderbird/features/ [L,R=301]
+#    RewriteRule proc-pouzivat/enigmail/?$ https://support.mozilla.org/cs/kb/sifrovani-digitalni-podepisovani-zprav [L,R=301]
+#    RewriteRule proc-pouzivat/kalendar/?$ https://support.mozilla.org/cs/kb/pouziti-kalendare-lightning [L,R=301]
+#
+#    RewriteRule propagace/?$ https://www.mozilla.cz/zapojte-se/loga-propagace/ [L,R=301]
+#
+#    RewriteRule stahnout/?$ https://www.mozilla.cz/stahnout/thunderbird/ [L,R=301]
+#    RewriteRule stahnout/tapety/?$ https://addons.mozilla.org/cs/thunderbird/themes/ [L,R=301]
+#
+#    RewriteRule zkusenosti/?$ https://www.mozilla.cz/produkty/thunderbird/ [L,R=301]
+#    RewriteRule zkusenosti/(.*)$ https://www.mozilla.cz/produkty/thunderbird/ [L,R=301]
+
+    RewriteRule ^(.*)$ https://www.mozilla.cz/produkty/thunderbird/? [L,R=301]
+</IfModule>
+
